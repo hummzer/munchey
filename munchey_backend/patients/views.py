@@ -9,6 +9,7 @@ from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from .models import Patient 
 
 class RegisterPatientView(APIView):
     def post(self,request):
@@ -44,3 +45,12 @@ class PatientDetailView(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.erors, status=status.HTTP_400_BAD_REQUEST)
+
+class PatientList(APIView):
+    permissions_classes = [IsAuthenticated]
+
+    def get(self, request):
+        patients = Patient.objects.all()
+        serializer = PatientSerializer(patients, many=True)
+
+        return Response(serializer.data)
