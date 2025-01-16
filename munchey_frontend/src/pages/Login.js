@@ -34,7 +34,7 @@ const Login = () => {
           type="password"
           placeholder="Password"
           value={password}
-          onChane={(e) => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
         <button type="submit">Login</button>

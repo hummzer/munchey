@@ -10,7 +10,7 @@ const App = () => {
   return (
     <Router>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Header title="Patients App" subtitle="Welcome to the routing example" />
+        <Header title="Patients App" subtitle="Welcome" />
         <main style={{ flex: 1,padding: '1rem', }}>
           <Routes>
             <Route path="/" element={<Login />} />
