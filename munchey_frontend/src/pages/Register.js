@@ -1,5 +1,5 @@
 import React,{ useState } from "react";
-import "./App.css";
+import "../index.css";
 
 const Register = () => {
   const [formData, setFormdata] = useState({
@@ -10,7 +10,7 @@ const Register = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormdata({ ...formdata, [name]: value });
+    setFormdata({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -54,7 +54,7 @@ const Register = () => {
           type="password"
           name="password"
           placeholder="Password"
-          value={formdata.password}
+          value={formData.password}
           required
         />
 
