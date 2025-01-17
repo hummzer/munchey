@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -137,3 +138,9 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Frontend running on port 3000
+]
+
